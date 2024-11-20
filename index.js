@@ -39,6 +39,8 @@ for (let i = 0; i < cities.length; i++){
 
     if (user_request_city === city_name){
         document.querySelector("h2").textContent = city_name;
+        document.querySelector("h2").textContent = city_name + " (" + city.country + ") ";
+        title.textContent = city_name;
         console.log(true);
         rate = true;
     }
