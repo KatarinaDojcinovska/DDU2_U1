@@ -78,7 +78,15 @@ function displayCityNotFound (userCityPrompt) {
     document.querySelector('title').textContent = `Not Found`;
     document.querySelector('h3').style.visibility = 'hidden';
   }
+function getCityDistances (cityId)  {
+    const cityDistances = []
+    for (let i = 0; i < distances.length; i++){
+        const distance = distances[i];
+        if (distance.city1 === cityId || distance.city2 === cityId) {
+        cityDistances.push(distance)
+      }
     }
+    return cityDistances
 }
     if (rate == false) {
         document.querySelector("h2").textContent = `${user_request_city} is not in the database`;
