@@ -124,7 +124,23 @@ function getFarthestCityId (distances, cityid) {
 
    function longest_city (longest){
     for(let i= 0; i < longest.length; i++){ //kolla vilket värde som är störst i arrayen
+function getClosestCity (distances, cityId){
+    let currentDistance = Infinity
+    let currentClosestCityId
+  
+    for (let i = 0; i < distances.length; i++) {
+        const distance = distances[i];
+      if (distance.distance < currentDistance) {
+        currentDistance = distance.distance
+        if (distance.city1 === cityId) {
+          currentClosestCityId = distance.city2
+        } else {
+          currentClosestCityId = distance.city1
+        }
+      }
     }
+  
+    return { id: currentClosestCityId, distance: currentDistance }
 }
 
 
