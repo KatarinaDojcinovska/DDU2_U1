@@ -65,6 +65,14 @@ for (let i = 0; i < cities.length; i++){
         title.textContent = city_name;
         console.log(true);
         rate = true;
+function displayCity (city) {
+    document.querySelector('h2').textContent = `${city.name} (${city.country})`
+    document.querySelector('title').textContent = `${city.name}`
+    
+    const targetCity = document.getElementById(city.id)
+    targetCity.classList.add('target')
+    document.querySelector('h3').style.visibility = 'visible'
+  }
     }
 }
     if (rate == false) {
