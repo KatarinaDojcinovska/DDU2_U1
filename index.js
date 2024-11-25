@@ -73,6 +73,11 @@ function displayCity (city) {
     targetCity.classList.add('target')
     document.querySelector('h3').style.visibility = 'visible'
   }
+function displayCityNotFound (userCityPrompt) {
+    document.querySelector('h2').textContent = `${userCityPrompt} finns inte i databasen`
+    document.querySelector('title').textContent = `Not Found`;
+    document.querySelector('h3').style.visibility = 'hidden';
+  }
     }
 }
     if (rate == false) {
