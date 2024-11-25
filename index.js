@@ -101,9 +101,24 @@ function getCityDistances (cityId)  {
         if (distances[i].city1 == user_request_city.id || distances[i].city2 == user_request_city.id ) {
             closest_city.push(distance[i]);
             console.log(city1, city2);
+function getFarthestCityId (distances, cityid) {
+    let currentDistance = 0
+    let currentFarthestCityId;
+  
+    for (let i = 0; i < distances.length; i++) {
+        const distance = distances[i];
+      if (distance.distance > currentDistance) {
+        currentDistance = distance.distance
+        if (distance.city1 === cityId) {
+          currentFarthestCityId = distance.city2
+        } else {
+          currentFarthestCityId = distance.city1
         }
+      }
     }
     return closest_city;
+    
+    return { id: currentFarthestCityId, distance: currentDistance }
 }
    distance(longest_city);
 
