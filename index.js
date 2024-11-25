@@ -34,9 +34,23 @@ function createCityBoxes () {
      if (rate == false) { 
         title.textContent = "Not found";
     }
+
+function cityNamePrompt () {
+    const userCityName = prompt (`Vilken stad`)
+    let cityID = null;
     
 for (let i = 0; i < cities.length; i++){
     createBox(cities[i].name);
+    for (const city of cities){
+        if (city.name.toUpperCase() === userCityName.toUpperCase()) {
+            displayCity(city);
+            cityID = city.id;
+            break;
+            } else {
+            displayCityNotFound(userCityName);
+            }
+        }
+    return cityID;
 }
 
 /*---------------------Prompt-------------------------*/
