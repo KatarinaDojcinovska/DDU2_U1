@@ -146,3 +146,17 @@ function getClosestCity (distances, cityId){
 
 
 
+function displayFarthestCity (cityData) {
+    let farthestCity = null
+    for (const city of cities) {
+      if (city.id === cityData.id) {
+        farthestCity = city
+        document.getElementById('furthest').textContent = city.name
+      }
+    }
+    const cityDiv = document.getElementById(farthestCity.id)
+    cityDiv.classList.add('furthest')
+    const distanceInMiles = cityData.distance / 10
+  
+    cityDiv.textContent = `${farthestCity.name} ${distanceInMiles} mil bort`;
+}
