@@ -22,6 +22,14 @@ function createBox (nameOfCity) {
         title.textContent = user_request_city;
         rate = true;
     } 
+function createCityBoxes () {
+   for (let i = 0; i <cities.length; i++) {
+    const cityDiv = document.createElement(`div`);
+    cityDiv.id = cities[i].id;
+    cityDiv.classList.add(`cityBox`);
+    cityDiv.textContent = cities[i].name;
+    document.getElementById(`cities`).appendChild(cityDiv);
+   }
 }
      if (rate == false) { 
         title.textContent = "Not found";
