@@ -160,3 +160,16 @@ function displayFarthestCity (cityData) {
   
     cityDiv.textContent = `${farthestCity.name} ${distanceInMiles} mil bort`;
 }
+function displayClosestCity (cityData) {
+    let closestCity = null
+    for (const city of cities) {
+      if (city.id === cityData.id) {
+        closestCity = city;
+        document.getElementById('closest').textContent = city.name;
+      }
+    }
+    const cityDiv = document.getElementById(closestCity.id)
+    cityDiv.classList.add('closest')
+    const distanceInMiles = cityData.distance / 10
+    cityDiv.textContent = `${closestCity.name} ${distanceInMiles} mil bort`
+}
