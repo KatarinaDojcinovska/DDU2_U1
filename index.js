@@ -167,6 +167,14 @@ function displayClosestCity (cityData) {
         closestCity = city;
         document.getElementById('closest').textContent = city.name;
       }
+function createTable () {
+  const table = document.getElementById('table');
+  const cityCount = cities.length;
+  
+  createColumns(table, cityCount);
+  createRows(table, cityCount);
+  populateTable();
+}
     }
     const cityDiv = document.getElementById(closestCity.id)
     cityDiv.classList.add('closest')
