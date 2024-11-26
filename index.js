@@ -175,6 +175,13 @@ function createTable () {
   createRows(table, cityCount);
   populateTable();
 }
+function createColumns (table, cityCount) {
+  for (let i = 0; i < cityCount + 1; i++) {
+    const cell = document.createElement('div');
+    cell.classList.add('cell');
+    cell.classList.add('head_column');
+    if (i !== 0) {
+      cell.textContent = i - 1; // Stadens ID
     }
     const cityDiv = document.getElementById(closestCity.id)
     cityDiv.classList.add('closest')
