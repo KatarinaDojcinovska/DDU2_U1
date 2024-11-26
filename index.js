@@ -188,3 +188,31 @@ function createColumns (table, cityCount) {
     const distanceInMiles = cityData.distance / 10
     cityDiv.textContent = `${closestCity.name} ${distanceInMiles} mil bort`
 }
+function createRows (table, cityCount) {
+  for (let i = 0; i < cityCount; i++) {
+    const cityNameCell = document.createElement('div');
+    cityNameCell.textContent = cities[i].name;
+    cityNameCell.classList.add('head_row');
+    cityNameCell.classList.add('cell');
+  if (i % 2 === 0) {
+    cityNameCell.classList.add('even_row');
+  }
+  table.appendChild(cityNameCell);
+
+    for (let j = 0; j < cityCount; j++) {
+      const cell = document.createElement('div');
+      cell.classList.add('cell');
+  
+    if (j % 2 === 0) {
+      cell.style.backgroundColor = 'rgb(189, 172, 134)';
+    }
+  
+    if (i % 2 === 0) {
+      cell.classList.add('even_row');
+    }
+  
+    cell.id = `${i}-${j}`
+    table.appendChild(cell);
+    }
+  }
+}
