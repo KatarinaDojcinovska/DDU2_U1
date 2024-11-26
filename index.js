@@ -216,3 +216,13 @@ function createRows (table, cityCount) {
     }
   }
 }
+function populateTable () {
+    for (let i = 0; i <distances.length; i++){
+    
+      const distance = distances[i];
+    const cell = document.getElementById(`${distance.city1}-${distance.city2}`)
+    cell.textContent = distance.distance / 10
+    const cellReverse = document.getElementById(`${distance.city2}-${distance.city1}`)
+    cellReverse.textContent = distance.distance / 10
+  }
+}
