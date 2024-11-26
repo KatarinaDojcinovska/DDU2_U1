@@ -229,3 +229,10 @@ function populateTable () {
   createCityBoxes();
   createTable();
   const cityID = cityNamePrompt();
+  if (cityID) {
+    const cityDistances = getCityDistances(cityID);
+    const farthestCity = getFarthestCityId(cityDistances, cityID);
+    const closestCity = getClosestCity(cityDistances, cityID);
+    displayFarthestCity(farthestCity);
+    displayClosestCity(closestCity);
+  }
