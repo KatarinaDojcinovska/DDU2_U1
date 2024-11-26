@@ -226,3 +226,6 @@ function populateTable () {
     cellReverse.textContent = distance.distance / 10
   }
 }
+  createCityBoxes();
+  createTable();
+  const cityID = cityNamePrompt();
